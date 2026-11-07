@@ -103,67 +103,61 @@ tugas-uts-web1/
 
 Struktur folder dibuat sesuai ketentuan soal: file HTML di root, `css/`, `js/`, `img/`, dan `assets/`.
 
-![Struktur folder](screenshots/01-struktur-folder.png)
+<img width="899" height="570" alt="1  Menyiapkan folder" src="https://github.com/user-attachments/assets/fccc6346-ea66-44af-958e-86fddb23d16b" />
 
 ### 6.2 Halaman Login (`index.html`)
+
+**a. Sebelum menggunakan css**
+<img width="1855" height="948" alt="3  halaman Login sebelum menggunakan css" src="https://github.com/user-attachments/assets/8d6032bb-e5b6-4b54-94b0-c604435365c3" />
+**b. Mempercantik Background**
+<img width="1911" height="1018" alt="4   dibalut sedikit css" src="https://github.com/user-attachments/assets/e72fecee-4561-49b3-95dd-481f22598403" />
+**c.  Mempercantik Form login**
+<img width="1855" height="987" alt="5  Menggunakan css" src="https://github.com/user-attachments/assets/49d5c565-d794-420f-87c8-bf195df95524" />
 
 Halaman login memiliki input email dan password serta tombol **Login**. Data dicocokkan dengan array `dataPengguna` di `data.js` (ditambah akun yang didaftarkan lewat modal Daftar). Jika salah, muncul pop-up berisi pesan *"Email/password yang anda masukkan salah"*.
 
 **a. Tampilan awal**
 
-![Login](screenshots/02-login.png)
+<img width="1305" height="1032" alt="image" src="https://github.com/user-attachments/assets/e413e08b-f2e0-4c8c-aa89-86ff8f1fece4" />
+
 
 **b. Validasi field kosong / format email salah**
 
-![Validasi login](screenshots/03-login-validasi.png)
+<img width="921" height="1032" alt="(fitur) Kosong" src="https://github.com/user-attachments/assets/ff842d92-19bd-4bce-b54a-0639494cb2b6" />
 
 **c. Login gagal (pop-up error)**
 
-![Login gagal](screenshots/04-login-gagal.png)
-
-**d. Modal Lupa Password**
+<img width="1002" height="949" alt="(fitur)pop up login gagal" src="https://github.com/user-attachments/assets/4cf9178f-1b2f-49d0-a330-1b4869d0e03b" />
+**d. Fitur Lupa Password**
 
 Pengguna memasukkan email. Sistem memeriksa apakah email terdaftar, lalu menampilkan pop-up konfirmasi (simulasi pengiriman tautan reset).
 
-![Modal lupa password](screenshots/05-modal-lupa-password.png)
-
-**e. Modal Daftar**
+<img width="918" height="1035" alt="(fitur) fitur lupa password" src="https://github.com/user-attachments/assets/6db315cf-2b38-4b80-823e-257c6a0ca210" />
+**e. Fitur Daftar**
 
 Form pendaftaran divalidasi (nama minimal 3 karakter, email valid dan belum terdaftar, password minimal 6 karakter, konfirmasi password harus sama). Akun baru disimpan di `localStorage`.
 
-![Modal daftar](screenshots/06-modal-daftar.png)
-
+<img width="912" height="1030" alt="(fitur)daftar" src="https://github.com/user-attachments/assets/7422db04-e344-4d7f-91a1-369e07e359d4" />
 ### 6.3 Dashboard (`dashboard.html`)
 
 Dashboard menampilkan *greeting* berdasarkan jam lokal perangkat (pagi, siang, sore, atau malam) beserta tanggal dan jam yang berjalan. Ada empat menu utama: Informasi Stok/Katalog, Tracking Pengiriman, Laporan Pemesanan, dan History Transaksi.
 
-![Dashboard](screenshots/07-dashboard.png)
-
+<img width="1919" height="996" alt="2 1 dashboard html" src="https://github.com/user-attachments/assets/302e7859-ebc6-4d8d-9117-7c0555357c88" />
 **Laporan Pemesanan** menghitung ringkasan (jumlah pesanan, total buku, total pembayaran) dan rekap per judul dari data pesanan.
 
-![Laporan pemesanan](screenshots/08-laporan-pemesanan.png)
+<img width="1393" height="1035" alt="image" src="https://github.com/user-attachments/assets/cdd461a1-802f-46a8-a334-c8cf0c48eee4" />
+
 
 **History Transaksi** menampilkan daftar semua pesanan beserta link ke halaman tracking.
 
-![History transaksi](screenshots/09-history-transaksi.png)
-
+<img width="914" height="1032" alt="(fitur)history transaksi" src="https://github.com/user-attachments/assets/b8a6d50a-20fe-4df9-ad9f-1d1f2765060d" />
 ### 6.4 Informasi Stok / Katalog (`stok.html`)
 
 Tabel dibuat secara dinamis dari variabel `dataKatalogBuku` dengan `createElement` (tanpa menulis baris tabel manual di HTML). Stok di bawah 200 eksemplar ditandai merah, dan ada kolom pencarian.
 
-**a. Tabel katalog dari data.js**
+**a. Tabel katalog**
 
-![Tabel stok](screenshots/10-stok-tabel.png)
-
-**b. Validasi form tambah buku**
-
-![Validasi tambah buku](screenshots/11-stok-validasi.png)
-
-**c. Baris stok baru berhasil ditambahkan**
-
-Fitur tambah baris memakai JavaScript DOM. Data tersimpan di `localStorage`, dan buku yang ditambahkan bisa dihapus lagi.
-
-![Baris baru](screenshots/12-stok-tambah-baris.png)
+<img width="1860" height="986" alt="2 3 Stok html" src="https://github.com/user-attachments/assets/99fdbc19-e67b-40a3-bc0c-6f213520ae72" />
 
 ### 6.5 Halaman Pemesanan (`checkout.html`)
 
@@ -171,19 +165,19 @@ Halaman ini menampilkan data pemesanan yang bisa ditambah, diubah jumlahnya, dan
 
 **a. Keranjang berisi buku dari katalog**
 
-![Keranjang](screenshots/13-checkout-keranjang.png)
+<img width="737" height="702" alt="image" src="https://github.com/user-attachments/assets/d71e6d7a-7f15-4ab4-a684-dab7dc34dadf" />
 
 **b. Validasi form pemesan dan pembayaran**
 
 Nama, email, nomor HP (format Indonesia), alamat, ekspedisi, dan metode pembayaran divalidasi. Total bayar dihitung otomatis (subtotal ditambah ongkos kirim sesuai ekspedisi).
 
-![Validasi checkout](screenshots/14-checkout-validasi.png)
+<img width="887" height="1034" alt="image" src="https://github.com/user-attachments/assets/2798ef62-5864-4380-97ae-cfd7807f24a7" />
 
 **c. Pesanan berhasil dan nomor DO**
 
 Pesanan disimpan, stok buku berkurang, dan pengguna menerima nomor DO untuk dilacak.
 
-![Pesanan berhasil](screenshots/15-checkout-sukses.png)
+<img width="877" height="1036" alt="image" src="https://github.com/user-attachments/assets/c539edca-2178-4395-bdcf-67b6e7e3df1e" />
 
 ### 6.6 Informasi Pengiriman (`tracking.html`)
 
@@ -191,27 +185,11 @@ Pengguna memasukkan Nomor Delivery Order lalu menekan **Cari**. Sistem mencari d
 
 **a. Hasil pencarian DO `20230012`**
 
-![Tracking 20230012](screenshots/16-tracking-20230012.png)
+<img width="879" height="1027" alt="image" src="https://github.com/user-attachments/assets/761b60c4-cf7a-4cf0-a339-f9e2900b382d" />
 
-**b. Hasil pencarian DO `20230013` (paket sudah diterima)**
+**b. Nomor DO tidak ditemukan / input tidak valid**
 
-![Tracking 20230013](screenshots/17-tracking-20230013.png)
-
-**c. Nomor DO tidak ditemukan / input tidak valid**
-
-![Tracking tidak ditemukan](screenshots/18-tracking-tidak-ditemukan.png)
-
-**d. Melacak pesanan baru dari checkout**
-
-![Tracking pesanan baru](screenshots/19-tracking-pesanan-baru.png)
-
-### 6.7 Tampilan Responsif
-
-Tampilan menyesuaikan layar kecil (HP) dengan layout satu kolom.
-
-![Responsif](screenshots/20-responsif.png)
-
----
+<img width="876" height="1033" alt="image" src="https://github.com/user-attachments/assets/5d49d158-402d-49ee-a8ec-36db7a6e1116" />
 
 ## 7. Konsep yang Digunakan
 
