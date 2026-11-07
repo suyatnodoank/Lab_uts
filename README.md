@@ -7,7 +7,7 @@ Tugas UTS Pemrograman Web 1
 | **Nama** | Suyatno |
 | **NIM** | 312510129 |
 | **Kelas** | I253C |
-| **Link video penjelasan** | _isi link video (maks. 15 menit)_ |
+| **Link video penjelasan** | (https://youtu.be/dPa8sdQHPgo) |
 
 ---
 
