@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pengiriman | Pustaka UT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Pustaka UT</a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="tracking.html" aria-current="page">Tracking</a>
+    </nav>
+    <div class="topbar__user">
+      <span id="user-name"></span>
+      <button type="button" class="btn btn--ghost btn--sm" id="btn-logout">Keluar</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page__head">
+      <div>
+        <h1>Tracking pengiriman</h1>
+        <p>Masukkan nomor Delivery Order untuk melihat posisi paket. Contoh: 20230012 atau 20230013.</p>
+      </div>
+    </div>
+
+    <section class="panel" aria-labelledby="judul-cari">
+      <h2 id="judul-cari">Cari pengiriman</h2>
+      <form id="form-tracking" class="search-bar" novalidate>
+        <div class="field">
+          <label for="nomor-do">Nomor Delivery Order</label>
+          <input type="text" id="nomor-do" name="nomor" inputmode="numeric" placeholder="20230012" autocomplete="off">
+          <span class="field__error" role="alert"></span>
+        </div>
+        <button type="submit" class="btn" style="margin-top:1.55rem">Cari</button>
+      </form>
+    </section>
+
+    <section class="panel" id="hasil" aria-labelledby="judul-hasil" hidden>
+      <div class="result__head">
+        <div>
+          <p class="field__hint" style="margin:0">Nama pemesan</p>
+          <h2 id="r-nama"></h2>
+        </div>
+        <span id="r-status" class="badge"></span>
+      </div>
+
+      <div class="progress" id="r-progress" role="progressbar" aria-label="Progres pengiriman" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress__bar" id="r-bar"></div>
+      </div>
+      <ol class="steps" id="r-steps"></ol>
+
+      <h3 id="judul-hasil">Detail pengiriman</h3>
+      <dl class="details">
+        <div><dt>Ekspedisi</dt><dd id="r-ekspedisi"></dd></div>
+        <div><dt>Tanggal kirim</dt><dd id="r-tanggal"></dd></div>
+        <div><dt>Jenis paket</dt><dd id="r-paket"></dd></div>
+        <div><dt>Total pembayaran</dt><dd id="r-total"></dd></div>
+      </dl>
+
+      <h3>Riwayat perjalanan</h3>
+      <ol class="timeline" id="r-timeline"></ol>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

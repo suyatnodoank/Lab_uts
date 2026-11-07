@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog &amp; Stok | Pustaka UT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Pustaka UT</a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html" aria-current="page">Katalog</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <div class="topbar__user">
+      <span id="user-name"></span>
+      <button type="button" class="btn btn--ghost btn--sm" id="btn-logout">Keluar</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page__head">
+      <div>
+        <h1>Informasi stok buku</h1>
+        <p>Stok di bawah 200 eksemplar ditandai merah.</p>
+      </div>
+      <div class="stats">
+        <div><strong id="total-judul">0</strong><span>judul</span></div>
+        <div><strong id="total-stok">0</strong><span>eksemplar</span></div>
+      </div>
+    </div>
+
+    <section class="panel" aria-labelledby="judul-tabel">
+      <h2 id="judul-tabel">Daftar buku</h2>
+      <div class="toolbar">
+        <input type="search" id="cari-buku" class="inline-input" placeholder="Cari judul atau kode buku" aria-label="Cari buku">
+        <button type="button" class="btn btn--ghost btn--sm" id="btn-reset">Kembalikan data awal</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th scope="col">Sampul</th>
+              <th scope="col">Kode</th>
+              <th scope="col">Judul</th>
+              <th scope="col">Jenis</th>
+              <th scope="col">Edisi</th>
+              <th scope="col" class="num">Stok</th>
+              <th scope="col" class="num">Harga</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-stok"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="judul-tambah">
+      <h2 id="judul-tambah">Tambah buku baru</h2>
+      <form id="form-stok" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="stok-kode">Kode barang</label>
+            <input type="text" id="stok-kode" name="kode" placeholder="ASIP4301" maxlength="8">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="stok-nama">Judul buku</label>
+            <input type="text" id="stok-nama" name="nama">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="stok-jenis">Jenis</label>
+            <select id="stok-jenis" name="jenis">
+              <option>Buku Ajar</option>
+              <option>Modul</option>
+              <option>Buku Referensi</option>
+            </select>
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="stok-edisi">Edisi</label>
+            <input type="number" id="stok-edisi" name="edisi" min="1" value="1">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="stok-stok">Stok</label>
+            <input type="number" id="stok-stok" name="stok" min="0">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="stok-harga">Harga (Rp)</label>
+            <input type="number" id="stok-harga" name="harga" min="1000" step="1000">
+            <span class="field__error" role="alert"></span>
+          </div>
+        </div>
+        <button type="submit" class="btn">Tambah ke katalog</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

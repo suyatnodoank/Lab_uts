@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Pustaka UT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Pustaka UT</a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html" aria-current="page">Checkout</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <div class="topbar__user">
+      <span id="user-name"></span>
+      <button type="button" class="btn btn--ghost btn--sm" id="btn-logout">Keluar</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page__head">
+      <div>
+        <h1>Pemesanan buku</h1>
+        <p>Atur isi keranjang, lengkapi data pemesan, lalu pilih pembayaran.</p>
+      </div>
+    </div>
+
+    <div class="checkout">
+      <section class="panel" aria-labelledby="judul-keranjang">
+        <h2 id="judul-keranjang">Keranjang</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th scope="col">Judul</th>
+                <th scope="col" class="num">Harga</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col" class="num">Subtotal</th>
+                <th scope="col">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-cart"></tbody>
+          </table>
+        </div>
+        <div class="add-row">
+          <label for="pilih-buku" class="field__hint">Tambah buku lain</label>
+          <select id="pilih-buku" class="inline-input"></select>
+          <input type="number" id="qty-baru" class="inline-input inline-input--qty" min="1" value="1" aria-label="Jumlah">
+          <button type="button" class="btn btn--ghost" id="btn-tambah">Tambah</button>
+        </div>
+      </section>
+
+      <form class="panel" id="form-checkout" novalidate>
+        <fieldset>
+          <legend>Data pemesan</legend>
+          <div class="field">
+            <label for="co-nama">Nama lengkap</label>
+            <input type="text" id="co-nama" name="nama" autocomplete="name">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="co-email">Email</label>
+            <input type="email" id="co-email" name="email" autocomplete="email">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="co-telepon">Nomor HP</label>
+            <input type="tel" id="co-telepon" name="telepon" autocomplete="tel" placeholder="081234567890">
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="co-alamat">Alamat pengiriman</label>
+            <textarea id="co-alamat" name="alamat" rows="3" autocomplete="street-address"></textarea>
+            <span class="field__error" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pengiriman dan pembayaran</legend>
+          <div class="field">
+            <label for="co-ekspedisi">Ekspedisi</label>
+            <select id="co-ekspedisi" name="ekspedisi">
+              <option value="">Pilih ekspedisi</option>
+              <option value="JNE">JNE (Rp 15.000)</option>
+              <option value="Pos Indonesia">Pos Indonesia (Rp 12.000)</option>
+              <option value="J&amp;T">J&amp;T (Rp 14.000)</option>
+              <option value="SiCepat">SiCepat (Rp 13.000)</option>
+            </select>
+            <span class="field__error" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="co-metode">Metode pembayaran</label>
+            <select id="co-metode" name="metode">
+              <option value="">Pilih metode</option>
+              <option>Transfer Bank</option>
+              <option>E-Wallet</option>
+              <option>Kartu Kredit</option>
+              <option>Bayar di Tempat (COD)</option>
+            </select>
+            <span class="field__error" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <div class="summary" aria-live="polite">
+          <div><span>Subtotal buku</span><span id="sum-subtotal">Rp 0</span></div>
+          <div><span>Ongkos kirim</span><span id="sum-ongkir">Rp 0</span></div>
+          <div class="grand"><span>Total bayar</span><span id="sum-total">Rp 0</span></div>
+        </div>
+        <button type="submit" class="btn btn--block" style="margin-top:1rem">Buat pesanan</button>
+      </form>
+    </div>
+  </main>
+
+  <div class="modal" id="modal-sukses" role="dialog" aria-modal="true" aria-labelledby="judul-sukses" hidden>
+    <div class="modal__box modal__box--success">
+      <h2 id="judul-sukses">Pesanan berhasil dibuat</h2>
+      <p>Nomor Delivery Order Anda <strong id="sukses-do"></strong>. Total pembayaran <strong id="sukses-total"></strong>.</p>
+      <div class="modal__actions">
+        <a class="btn" id="sukses-link" href="tracking.html">Lacak pesanan</a>
+        <button type="button" class="btn btn--ghost" data-close>Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

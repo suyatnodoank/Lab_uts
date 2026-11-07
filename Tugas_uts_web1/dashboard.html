@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Pustaka UT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Pustaka UT</a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html" aria-current="page">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <div class="topbar__user">
+      <span id="user-name"></span>
+      <button type="button" class="btn btn--ghost btn--sm" id="btn-logout">Keluar</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hello" aria-live="polite">
+      <h1 id="greeting">Selamat datang.</h1>
+      <p id="clock"></p>
+    </section>
+
+    <nav class="menu-grid" aria-label="Menu utama">
+      <a class="menu-tile menu-tile--main" href="stok.html">
+        <h2>Informasi Stok / Katalog</h2>
+        <p>Lihat buku ajar yang tersedia, cek stok, dan tambahkan ke keranjang.</p>
+      </a>
+      <a class="menu-tile" href="tracking.html">
+        <h2>Tracking Pengiriman</h2>
+        <p>Lacak paket dengan nomor Delivery Order.</p>
+      </a>
+      <button type="button" class="menu-tile" data-open="modal-laporan">
+        <h2>Laporan Pemesanan</h2>
+        <p>Ringkasan pesanan dan rekap per judul buku.</p>
+      </button>
+      <button type="button" class="menu-tile" data-open="modal-history">
+        <h2>History Transaksi</h2>
+        <p>Daftar semua transaksi yang pernah dibuat.</p>
+      </button>
+      <a class="menu-tile" href="checkout.html">
+        <h2>Checkout</h2>
+        <p>Selesaikan pesanan di keranjang.</p>
+      </a>
+    </nav>
+  </main>
+
+  <div class="modal" id="modal-laporan" role="dialog" aria-modal="true" aria-labelledby="judul-laporan" hidden>
+    <div class="modal__box modal__box--wide">
+      <button type="button" class="modal__close" data-close aria-label="Tutup">&times;</button>
+      <h2 id="judul-laporan">Laporan pemesanan</h2>
+      <div id="laporan-body"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-history" role="dialog" aria-modal="true" aria-labelledby="judul-history" hidden>
+    <div class="modal__box modal__box--wide">
+      <button type="button" class="modal__close" data-close aria-label="Tutup">&times;</button>
+      <h2 id="judul-history">History transaksi</h2>
+      <div id="history-body"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
